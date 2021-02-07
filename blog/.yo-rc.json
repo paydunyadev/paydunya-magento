@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.keita.tp",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "microservice",
+    "baseName": "blog",
+    "packageName": "com.keita.tp",
+    "packageFolder": "com/keita/tp",
+    "serverPort": "4000",
+    "authenticationType": "oauth2",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MjIxZTFiZTkxODdiYWJiNGQ5NWUxZGViNzMyYmIxZjViMWRiMzdkZjQ4Nzg4Y2Y5OWFlNmM5YWJhYTk3MDJhMGIyNjBhZTY4YmI4NjFjZTgzYmU4OTUzZWRkMWZmNzdjYzM1MTUzMTQ2M2RhYTE5OTM0ZWM3MGM1OTRiOTI1MzY=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1612711903454,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": ["en"],
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
