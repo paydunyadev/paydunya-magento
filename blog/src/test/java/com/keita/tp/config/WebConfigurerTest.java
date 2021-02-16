@@ -2,8 +2,11 @@ package com.keita.tp.config;
 
 import io.github.jhipster.config.JHipsterConstants;
 import io.github.jhipster.config.JHipsterProperties;
+import io.github.jhipster.web.filter.CachingHttpHeadersFilter;
+import org.h2.server.web.WebServlet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.web.embedded.undertow.UndertowServletWebServerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.mock.env.MockEnvironment;
 import org.springframework.mock.web.MockServletContext;
@@ -11,8 +14,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.servlet.*;
+import java.io.File;
 import java.util.*;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
@@ -54,6 +59,7 @@ public class WebConfigurerTest {
         webConfigurer.onStartup(servletContext);
 
 
+        verify(servletContext, never()).addServlet(eq("H2Console"), any(WebServlet.class));
     }
 
     @Test
@@ -62,6 +68,20 @@ public class WebConfigurerTest {
         webConfigurer.onStartup(servletContext);
 
 
+        verify(servletContext).addServlet(eq("H2Console"), any(WebServlet.class));
+    }
+
+    @Test
+    public void testCustomizeServletContainer() {
+        env.setActiveProfiles(JHipsterConstants.SPRING_PROFILE_PRODUCTION);
+        UndertowServletWebServerFactory container = new UndertowServletWebServerFactory();
+        webConfigurer.customize(container);
+        assertThat(container.getMimeMappings().get("abs")).isEqualTo("audio/x-mpeg");
+        assertThat(container.getMimeMappings().get("html")).isEqualTo("text/html;charset=utf-8");
+        assertThat(container.getMimeMappings().get("json")).isEqualTo("text/html;charset=utf-8");
+        if (container.getDocumentRoot() != null) {
+            assertThat(container.getDocumentRoot()).isEqualTo(new File("target/classes/static/"));
+        }
     }
 
     @Test
