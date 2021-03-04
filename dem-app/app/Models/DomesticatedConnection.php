@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LivraisonNotDone extends Model
+class DomesticatedConnection extends Model
 {
     use HasFactory;
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function jobLivraison(){
-        return $this->belongsTo(JobLivraison::class);
+    public function waterSde(){
+        return $this->belongsTo(WaterSde::class);
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class JobLivraison extends Model
+class JobDeposit extends Model
 {
     use HasFactory;
 
@@ -21,12 +21,5 @@ class JobLivraison extends Model
      */
     public function user(){
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function livraisonNotDone(){
-        return $this->hasOne(LivraisonNotDone::class);
     }
 }
