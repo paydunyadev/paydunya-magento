@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewayApp.demandeDemande.home.title">Demandes</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-demande" [routerLink]="['/demande/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="gatewayApp.demandeDemande.home.createLabel">
+            Create new Demande
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="demandes">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="gatewayApp.demandeDemande.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="gatewayApp.demandeDemande.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="imagePiece"><span jhiTranslate="gatewayApp.demandeDemande.imagePiece">Image Piece</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="user.login"><span jhiTranslate="gatewayApp.demandeDemande.user">User</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="type.name"><span jhiTranslate="gatewayApp.demandeDemande.type">Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+            <tr *ngFor="let demande of demandes ;trackBy: trackId">
+                <td><a [routerLink]="['/demande', demande.id, 'view' ]">{{demande.id}}</a></td>
+                <td>{{demande.lastName}}</td>
+                <td>{{demande.firstName}}</td>
+                <td>
+                    <a *ngIf="demande.imagePiece" (click)="openFile(demande.imagePieceContentType, demande.imagePiece)">
+                        <img [src]="'data:' + demande.imagePieceContentType + ';base64,' + demande.imagePiece" style="max-height: 30px;" alt="demande image"/>
+                    </a>
+                    <span *ngIf="demande.imagePiece">{{demande.imagePieceContentType}}, {{byteSize(demande.imagePiece)}}</span>
+                </td>
+                <td>
+                    {{demande.user?.login}}
+                </td>
+                <td>
+                    <div *ngIf="demande.type">
+                        <a [routerLink]="['../type', demande.type?.id, 'view' ]" >{{demande.type?.name}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/demande', demande.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/demande', demande.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'demande', { outlets: { popup: demande.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [],
+  "fields": [
+    {
+      "fieldName": "nbrtest",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "positif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "negatif",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gueris",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deces",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "changelogDate": "20210217005239",
+  "dto": "no",
+  "searchEngine": false,
+  "service": "no",
+  "entityTableName": "covid",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "pagination"
+}

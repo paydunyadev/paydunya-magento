@@ -20,8 +20,9 @@ class CreateAdministrationsTable extends Migration
             $table->string('tel');
             $table->foreignId('sas_or_sasu_id')->nullable()->constrained('sas_or_sasus')->onDelete('cascade');
             $table->foreignId('sarl_suarl_id')->nullable()->constrained('sarl_suarls')->onDelete('cascade');
-            $table->foreignId('sa_id')->nullable()->constrained('sas')->onDelete('cascade');            $table->timestamps();
-            $table->foreignId('sci_id')->nullable()->constrained('scis')->onDelete('cascade');            $table->timestamps();
+            $table->foreignId('sa_id')->nullable()->constrained('sas')->onDelete('cascade');
+            $table->foreignId('sci_id')->nullable()->constrained('scis')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
