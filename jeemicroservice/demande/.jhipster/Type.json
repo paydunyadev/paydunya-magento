@@ -10,7 +10,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20210327094023",
+    "changelogDate": "20210327105015",
     "entityTableName": "type",
     "dto": "no",
     "pagination": "infinite-scroll",
