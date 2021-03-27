@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
       },
       {
         path: 'type',
-        loadChildren: './demande/type/type.module#DemandeTypeModule'
+        loadChildren: './partener/type/type.module#PartenerTypeModule'
       }
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ])

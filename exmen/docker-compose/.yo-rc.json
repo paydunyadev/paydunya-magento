@@ -6,7 +6,8 @@
     "directoryPath": "../",
     "appsFolders": [
       "gateway",
-      "demande"
+      "demande",
+      "partener"
     ],
     "clusteredDbApps": [],
     "consoleOptions": [

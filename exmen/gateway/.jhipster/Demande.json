@@ -41,7 +41,7 @@
             "otherEntityField": "name"
         }
     ],
-    "changelogDate": "20210327154632",
+    "changelogDate": "20210327164301",
     "entityTableName": "demande",
     "dto": "no",
     "pagination": "infinite-scroll",

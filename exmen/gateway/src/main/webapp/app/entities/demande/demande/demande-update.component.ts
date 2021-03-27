@@ -8,8 +8,8 @@ import { JhiAlertService, JhiDataUtils } from 'ng-jhipster';
 import { IDemande, Demande } from 'app/shared/model/demande/demande.model';
 import { DemandeService } from './demande.service';
 import { IUser, UserService } from 'app/core';
-import { IType } from 'app/shared/model/demande/type.model';
-import { TypeService } from 'app/entities/demande/type';
+import { IType } from 'app/shared/model/partener/type.model';
+import { TypeService } from 'app/entities/partener/type';
 
 @Component({
   selector: 'jhi-demande-update',

@@ -1,5 +1,5 @@
 import { IUser } from 'app/core/user/user.model';
-import { IType } from 'app/shared/model/demande/type.model';
+import { IType } from 'app/shared/model/partener/type.model';
 
 export interface IDemande {
   id?: number;

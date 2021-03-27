@@ -25,6 +25,19 @@ application {
   entities Demande, Type
 }
 
+application {
+  config {
+    baseName partener,
+    packageName com.okta.developer.blog,
+    applicationType microservice,
+    authenticationType oauth2,
+    prodDatabaseType postgresql,
+    serverPort 8081,
+    serviceDiscoveryType eureka
+  }
+  entities Partener, Type
+}
+
 entity Demande {
   lastName String required minlength(3),
   firstName String required minlength(2),
@@ -32,6 +45,9 @@ entity Demande {
 }
 
 entity Type {
+  title String required,
+}
+entity Partener {
   title String required,
 }
 
@@ -44,11 +60,12 @@ relationship ManyToOne {
 
 paginate Demande, Type with infinite-scroll
 microservice Demande, Type with demande
+microservice Partener, Type with partener
 
 // will be created under 'docker-compose' folder
 deployment {
   deploymentType docker-compose
-  appsFolders [gateway, demande]
+  appsFolders [gateway, demande,partener]
   dockerRepositoryName "jmicro"
   consoleOptions [zipkin]
 }
