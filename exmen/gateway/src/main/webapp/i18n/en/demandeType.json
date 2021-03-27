@@ -1,0 +1,25 @@
+{
+  "gatewayApp": {
+    "demandeType": {
+      "home": {
+        "title": "Types",
+        "createLabel": "Create a new Type",
+        "createOrEditLabel": "Create or edit a Type"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Type {{ id }}?"
+      },
+      "detail": {
+        "title": "Type"
+      },
+      "title": "Title"
+    }
+  },
+  "demandeApp": {
+    "demandeType": {
+      "created": "A new Type is created with identifier {{ param }}",
+      "updated": "A Type is updated with identifier {{ param }}",
+      "deleted": "A Type is deleted with identifier {{ param }}"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "gatewayApp": {
+    "demandeDemande": {
+      "home": {
+        "title": "Demandes",
+        "createLabel": "Create a new Demande",
+        "createOrEditLabel": "Create or edit a Demande"
+      },
+      "delete": {
+        "question": "Are you sure you want to delete Demande {{ id }}?"
+      },
+      "detail": {
+        "title": "Demande"
+      },
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "imagePiece": "Image Piece",
+      "user": "User",
+      "type": "Type"
+    }
+  },
+  "demandeApp": {
+    "demandeDemande": {
+      "created": "A new Demande is created with identifier {{ param }}",
+      "updated": "A Demande is updated with identifier {{ param }}",
+      "deleted": "A Demande is deleted with identifier {{ param }}"
+    }
+  }
+}
