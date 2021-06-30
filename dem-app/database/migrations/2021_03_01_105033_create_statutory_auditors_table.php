@@ -17,7 +17,7 @@ class CreateStatutoryAuditorsTable extends Migration
             $table->id();
             $table->string('holder');
             $table->string('substitude');
-            $table->boolean('isAccepted');
+            $table->boolean('isAccepted')->default(false);
             $table->foreignId('sas_or_sasu_id')->nullable()->constrained('sas_or_sasus')->onDelete('cascade');
             $table->foreignId('sarl_suarl_id')->nullable()->constrained('sarl_suarls')->onDelete('cascade');
             $table->foreignId('sa_id')->nullable()->constrained('sas')->onDelete('cascade');

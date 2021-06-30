@@ -9,6 +9,10 @@ class SocialConnection extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'letterOfSonnes',
+        'water_sde_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

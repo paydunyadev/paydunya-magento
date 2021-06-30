@@ -15,7 +15,7 @@ class CreateIndividualsTable extends Migration
     {
         Schema::create('individuals', function (Blueprint $table) {
             $table->id();
-            $table->string('accronym');
+//            $table->string('accronym');
             $table->string('addressEstablishment');
             $table->boolean('ifHaveRegisterTrade');
             $table->string('firstNameRepresentativeLegal');
@@ -28,7 +28,8 @@ class CreateIndividualsTable extends Migration
             $table->string('spouseLastName');
             $table->date('weddingDate');
             $table->date('depositDate');
-            $table->boolean('isSgn');
+            $table->boolean('isSgn')->default(false);
+            $table->text('signature');
             $table->foreignId('entreprise_id')->constrained('entreprises')->onDelete('cascade');
             $table->foreignId('marital_option_id')->constrained('marital_options')->onDelete('cascade');
             $table->foreignId('marital_statuse_id')->constrained('marital_statuses')->onDelete('cascade');

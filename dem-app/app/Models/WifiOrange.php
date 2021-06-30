@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class WifiOrange extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'move_id',
+        'offer_type_id',
+        'costomer_entreprise_id',
+    ];
 
+    protected $dates = ['dateSignature'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

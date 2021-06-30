@@ -9,6 +9,18 @@ class InfoGroupeEntreprise extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'duration',
+        'capitalSocial',
+        'apport',
+        'numerical',
+        'nature',
+        'part',
+        'action',
+        'capitalAllocation',
+        'entreprise_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

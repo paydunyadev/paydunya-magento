@@ -18,7 +18,7 @@ class CreateOtherConnectionsTable extends Migration
             $table->string('annualComsuption');
             $table->string('debitDaily');
             $table->string('debitSchedule');
-            $table->foreignId('water_sdes')->nullable()->constrained('water_sdes')->onDelete('cascade');
+            $table->foreignId('water_sde_id')->nullable()->constrained('water_sdes')->onDelete('cascade');
             $table->timestamps();
         });
     }

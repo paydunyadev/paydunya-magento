@@ -15,6 +15,7 @@
     ],
     "serviceDiscoveryType": "eureka",
     "dockerRepositoryName": "jmicro",
-    "dockerPushCommand": "docker push"
+    "dockerPushCommand": "docker push",
+    "jwtSecretKey": "ZWQ1NjdkMTVmYzc1MjZiYmIxOWI5MTVjOTQzODRhODM5MzA2MjYxMDM1Yjk5ODBkOWFlMjFmNTA5OTZkMGYwMmRlMWE1YmNiNTdmMGVlNzNhOTJiNGJmYzJlOGFiMDlhYzU4Nw=="
   }
 }

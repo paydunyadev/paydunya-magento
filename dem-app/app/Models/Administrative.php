@@ -8,6 +8,31 @@ use Illuminate\Database\Eloquent\Model;
 class Administrative extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'firstName',
+        'lastName',
+        'recipient',
+        'libelleDistrick',
+        'numberDistrick',
+        'codePostal',
+        'contry',
+        'address',
+        'tel',
+        'email',
+        'placeExpedition',
+        'numberOfCopie',
+        'reason',
+        'reference',
+        'copieOfFolder',
+        'haveAlreadyGetThisDocPre',
+        'haveKeepFolder',
+        'region',
+        'commune',
+        'department',
+        'marital_statuse_id',
+        'type_administrative_id',
+        'request_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

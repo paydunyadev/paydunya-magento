@@ -9,6 +9,12 @@ class PhysiquePersonConnection extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'ownerAttestation',
+        'authorisation',
+        'water_sde_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

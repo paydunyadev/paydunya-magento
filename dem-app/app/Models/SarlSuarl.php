@@ -9,6 +9,7 @@ class SarlSuarl extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['entreprise_id'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

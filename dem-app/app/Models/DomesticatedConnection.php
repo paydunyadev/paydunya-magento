@@ -8,6 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class DomesticatedConnection extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'numberWaterPoint',
+        'numberBathroomSink',
+        'numberFaucet',
+        'numberSink',
+        'numberBathTub',
+        'numberUrinal',
+        'numberBidet',
+        'numberWc',
+        'numberLavoir',
+        'gardenSurface',
+        'poolCapacity',
+        'water_sde_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

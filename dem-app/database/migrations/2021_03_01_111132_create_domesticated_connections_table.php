@@ -26,7 +26,7 @@ class CreateDomesticatedConnectionsTable extends Migration
             $table->integer('numberLavoir');
             $table->string('gardenSurface');
             $table->string('poolCapacity');
-            $table->foreignId('water_sdes')->nullable()->constrained('water_sdes')->onDelete('cascade');
+            $table->foreignId('water_sde_id')->nullable()->constrained('water_sdes')->onDelete('cascade');
             $table->timestamps();
         });
     }

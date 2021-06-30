@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Canal extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'price',
+        'description',
+        'move_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

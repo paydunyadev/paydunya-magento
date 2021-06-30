@@ -15,8 +15,7 @@ class CreateMaritalRegimesTable extends Migration
     {
         Schema::create('marital_regimes', function (Blueprint $table) {
             $table->id();
-            $table->string('firstNameSpouse');
-            $table->string('lastNameSpouse');
+            $table->string('name');
             $table->timestamps();
         });
     }

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CaracteristiqueTechnique extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+    ];
 }

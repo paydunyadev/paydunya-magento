@@ -9,6 +9,13 @@ class BoardOfDirector extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'pdg',
+        'pca',
+        'dg',
+        'sa_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

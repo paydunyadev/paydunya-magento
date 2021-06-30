@@ -16,6 +16,7 @@ class CreateSasTable extends Migration
         Schema::create('sas', function (Blueprint $table) {
             $table->id();
             $table->foreignId('entreprise_id')->constrained('entreprises')->onDelete('cascade');
+            $table->foreignId('board_of_director_id')->constrained('board_of_directors')->onDelete('cascade');
             $table->timestamps();
         });
     }

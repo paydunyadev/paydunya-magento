@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SasOrSasu extends Model
 {
     use HasFactory;
+    protected $fillable = ['entreprise_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

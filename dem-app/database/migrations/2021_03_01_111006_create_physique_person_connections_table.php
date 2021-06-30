@@ -17,7 +17,7 @@ class CreatePhysiquePersonConnectionsTable extends Migration
             $table->id();
             $table->string('ownerAttestation');
             $table->string('authorisation');
-            $table->foreignId('water_sdes')->nullable()->constrained('water_sdes')->onDelete('cascade');
+            $table->foreignId('water_sde_id')->nullable()->constrained('water_sdes')->onDelete('cascade');
             $table->timestamps();
         });
     }

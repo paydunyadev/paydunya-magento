@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Request extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'isDisponible',
+        'isReceptedByCollectAgent',
+        'isCorrect',
+        'isDone',
+        'user_id',
+        'isValidByDepositAgent',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -17,10 +25,24 @@ class Request extends Model
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function canalCommunication(){
+        return $this->belongsTo(CanalCommunication::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function jobLivraison(){
         return $this->hasOne(JobLivraison::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function jobDeposit(){
+        return $this->hasOne(JobDeposit::class);
     }
 
     /**

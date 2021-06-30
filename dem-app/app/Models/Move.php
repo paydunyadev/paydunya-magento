@@ -8,6 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 class Move extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'ownerFirstName',
+        'ownerLastName',
+        'representatativeLastName',
+        'representatativeFirstName',
+        'dateBirthDay',
+        'placeOfBirthDay',
+        'nationality',
+        'installationAddress',
+        'billingAddress',
+        'homeTel',
+        'port',
+        'profession',
+        'email',
+        'employerName',
+        'professionalAddress',
+        'oficeTel',
+        'tel',
+        'photoIdentityPiece',
+        'numberIdentityPiece',
+        'neighbourName',
+        'neighbourTakenNumber',
+        'identity_piece_id',
+        'type_inscription_id',
+        'caracteristique_technique_id',
+        'request_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

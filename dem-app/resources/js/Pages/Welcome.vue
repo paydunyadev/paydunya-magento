@@ -5,7 +5,7 @@
      <Header />
       <main class="mt-12">
         <div
-          class="pt-14 bg-white sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden"
+          class="pt-14 h-screen bg-white sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden"
         >
           <div class="mx-auto max-w-7xl lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-8">
@@ -418,15 +418,18 @@
           </div>
         </form>
       </main>
+     <Footer />
     </div>
   </div>
 </template>
 <script>
 import Header from './Public/Header.vue'
+import Footer from "./Public/Footer.vue"
 
 export default {
     components:{
-        Header
+        Header,
+        Footer
     },
 }
 </script>

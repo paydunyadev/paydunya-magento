@@ -9,6 +9,9 @@ class JobDeposit extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['dateDeposit','duration','numberpath','isRecepted','isValideFolder','nesDuration','request_id','user_id'];
+
+    protected $dates = ['dateDeposit'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

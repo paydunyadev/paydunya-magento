@@ -9,6 +9,12 @@ class LegalPersonConnection extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'letterOfResponsableEntreprise',
+        'originalOfQuota',
+        'water_sde_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

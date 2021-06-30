@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Sci extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'entreprise_id',
+        'proofSiegeSocial',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

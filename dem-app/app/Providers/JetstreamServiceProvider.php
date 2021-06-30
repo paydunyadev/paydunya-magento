@@ -21,7 +21,7 @@ class JetstreamServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // Jetstream::ignoreRoutes();
     }
 
     /**
@@ -33,13 +33,13 @@ class JetstreamServiceProvider extends ServiceProvider
     {
         $this->configurePermissions();
 
-        Jetstream::createTeamsUsing(CreateTeam::class);
-        Jetstream::updateTeamNamesUsing(UpdateTeamName::class);
-        Jetstream::addTeamMembersUsing(AddTeamMember::class);
-        Jetstream::inviteTeamMembersUsing(InviteTeamMember::class);
-        Jetstream::removeTeamMembersUsing(RemoveTeamMember::class);
-        Jetstream::deleteTeamsUsing(DeleteTeam::class);
-        Jetstream::deleteUsersUsing(DeleteUser::class);
+        // Jetstream::createTeamsUsing(CreateTeam::class);
+        // Jetstream::updateTeamNamesUsing(UpdateTeamName::class);
+        // Jetstream::addTeamMembersUsing(AddTeamMember::class);
+        // Jetstream::inviteTeamMembersUsing(InviteTeamMember::class);
+        // Jetstream::removeTeamMembersUsing(RemoveTeamMember::class);
+        // Jetstream::deleteTeamsUsing(DeleteTeam::class);
+        // Jetstream::deleteUsersUsing(DeleteUser::class);
     }
 
     /**

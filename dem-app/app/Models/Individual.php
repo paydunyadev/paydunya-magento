@@ -9,6 +9,30 @@ class Individual extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'addressEstablishment',
+        'ifHaveRegisterTrade',
+        'firstNameRepresentativeLegal',
+        'lastNameRepresentativeLegal',
+        'nationalityRepresentativeLegal',
+        'phoneRepresentativeLegal',
+        'domicilAddressRepresentativeLegal',
+        'emailRepresentativeLegal',
+        'spouseFirstName',
+        'spouseLastName',
+        'weddingDate',
+        'isSgn',
+        'marital_option_id',
+        'marital_statuse_id',
+        'marital_regime_id',
+        'entreprise_id',
+        'depositDate',
+        'signature',
+    ];
+
+    protected $dates =['weddingDate','depositDate'];
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

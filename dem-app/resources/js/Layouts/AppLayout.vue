@@ -10,26 +10,22 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="flex-shrink-0 flex items-center">
-                                <inertia-link :href="route('dashboard')">
+                                <inertia-link :href="route('public_home')">
                                     <jet-application-mark class="block h-9 w-auto" />
                                 </inertia-link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-
-                                    Tableau de board
-                                </jet-nav-link>
-                                <!-- <jet-nav-link :href="route('dem-administrative')" :active="route().current('dem-adm')">
+                                <jet-nav-link :href="route('dem-administrative')" :active="route().current('dem-administrative')">
                                     Administratives
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('dem-demenagement')" :active="route().current('dem-dem')">
+                                <jet-nav-link :href="route('dem-demenagement')" :active="route().current('dem-demenagement')">
                                     Déménagement
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('dem-market')" :active="route().current('dem-market')">
                                     Marché
-                                </jet-nav-link> -->
+                                </jet-nav-link>
                             </div>
                         </div>
 
@@ -54,13 +50,11 @@
                                             <!-- Team Management -->
                                             <template v-if="$page.props.jetstream.hasTeamFeatures">
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-
                                                     Gestion des équipes
                                                 </div>
 
                                                 <!-- Team Settings -->
                                                 <jet-dropdown-link :href="route('teams.show', $page.props.user.current_team)">
-
                                                     Réglages de équipes
                                                 </jet-dropdown-link>
 
@@ -72,7 +66,6 @@
 
                                                 <!-- Team Switcher -->
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-
                                                     Changer d'équipe
                                                 </div>
 
@@ -114,7 +107,6 @@
                                     <template #content>
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-
                                             Gestion du compte
                                         </div>
 
@@ -131,7 +123,6 @@
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <jet-dropdown-link as="button">
-
                                                 Se déconnecter
                                             </jet-dropdown-link>
                                         </form>
@@ -156,7 +147,6 @@
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
                         <jet-responsive-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
-
                             Tableau de board
                         </jet-responsive-nav-link>
                     </div>
@@ -176,7 +166,6 @@
 
                         <div class="mt-3 space-y-1">
                             <jet-responsive-nav-link :href="route('profile.show')" :active="route().current('profile.show')">
-
                                 Profil
                             </jet-responsive-nav-link>
 
@@ -187,7 +176,6 @@
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <jet-responsive-nav-link as="button">
-
                                     Se déconnecter
                                 </jet-responsive-nav-link>
                             </form>
@@ -197,13 +185,11 @@
                                 <div class="border-t border-gray-200"></div>
 
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-
                                     Gestion des équipes
                                 </div>
 
                                 <!-- Team Settings -->
                                 <jet-responsive-nav-link :href="route('teams.show', $page.props.user.current_team)" :active="route().current('teams.show')">
-
                                     Réglages des équipes
                                 </jet-responsive-nav-link>
 
@@ -215,7 +201,6 @@
 
                                 <!-- Team Switcher -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-
                                     Changer d'équipe
                                 </div>
 
@@ -251,41 +236,37 @@
 </template>
 
 <script>
-    import JetApplicationMark from '@/Jetstream/ApplicationMark'
-    import JetBanner from '@/Jetstream/Banner'
-    import JetDropdown from '@/Jetstream/Dropdown'
-    import JetDropdownLink from '@/Jetstream/DropdownLink'
-    import JetNavLink from '@/Jetstream/NavLink'
-    import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
-
-    export default {
-        components: {
-            JetApplicationMark,
-            JetBanner,
-            JetDropdown,
-            JetDropdownLink,
-            JetNavLink,
-            JetResponsiveNavLink,
-        },
-
-        data() {
-            return {
-                showingNavigationDropdown: false,
-            }
-        },
-
-        methods: {
-            switchToTeam(team) {
-                this.$inertia.put(route('current-team.update'), {
-                    'team_id': team.id
-                }, {
-                    preserveState: false
-                })
-            },
-
-            logout() {
-                this.$inertia.post(route('logout'));
-            },
+import JetApplicationMark from '@/Jetstream/ApplicationMark'
+import JetBanner from '@/Jetstream/Banner'
+import JetDropdown from '@/Jetstream/Dropdown'
+import JetDropdownLink from '@/Jetstream/DropdownLink'
+import JetNavLink from '@/Jetstream/NavLink'
+import JetResponsiveNavLink from '@/Jetstream/ResponsiveNavLink'
+export default {
+    components: {
+        JetApplicationMark,
+        JetBanner,
+        JetDropdown,
+        JetDropdownLink,
+        JetNavLink,
+        JetResponsiveNavLink,
+    },
+    data() {
+        return {
+            showingNavigationDropdown: false,
         }
+    },
+    methods: {
+        switchToTeam(team) {
+            this.$inertia.put(route('current-team.update'), {
+                'team_id': team.id
+            }, {
+                preserveState: false
+            })
+        },
+        logout() {
+            this.$inertia.post(route('logout'));
+        },
     }
+}
 </script>

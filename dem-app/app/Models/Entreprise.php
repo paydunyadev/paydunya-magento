@@ -9,11 +9,20 @@ class Entreprise extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'denomination',
+        'socialSiege',
+        'sigle',
+        'activities',
+        'request_id',
+    ];
+
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function civilStatus(){
-        return $this->belongsTo(CivilStatus::class);
+        return $this->hasMany(CivilStatus::class);
     }
 
     /**
@@ -56,5 +65,19 @@ class Entreprise extends Model
      */
     public function sci(){
         return $this->hasOne(Sci::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function infoGroupeEntreprise(){
+        return $this->hasOne(InfoGroupeEntreprise::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function getInfGroupeEntrepriseAttribute(){
+       return $this->infoGroupeEntreprise;
     }
 }

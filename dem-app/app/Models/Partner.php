@@ -9,6 +9,17 @@ class Partner extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'firstName',
+        'lastName',
+        'profession',
+        'tel',
+        'email',
+        'sas_or_sasu_id',
+        'marital_regime_id',
+        'sa_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

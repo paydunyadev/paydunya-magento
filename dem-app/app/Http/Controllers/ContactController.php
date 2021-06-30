@@ -34,12 +34,8 @@ class ContactController extends Controller
         $user = User::where('profile_id',1);
         Notification::send($user, new ReviewNotification($contact));
 
-        SyncMedia::dispatch($contact);
-
         event(new NewContact($contact));
 
-        $request->session()->flash('contact.name', $contact->name);
-
-        return redirect()->route('contact.index');
+        return redirect()->back()->with('message','votre demande à été envoyée');
     }
 }

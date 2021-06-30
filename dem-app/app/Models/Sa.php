@@ -9,6 +9,11 @@ class Sa extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'entreprise_id',
+        'board_of_director_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

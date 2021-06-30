@@ -9,6 +9,8 @@ class WaterSde extends Model
 {
     use HasFactory;
 
+    protected $fillable= ['attachement','move_id'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

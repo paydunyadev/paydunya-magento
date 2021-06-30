@@ -9,6 +9,14 @@ class StatutoryAuditor extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'holder',
+        'substitude',
+        'isAccepted',
+        'sas_or_sasu_id',
+        'sarl_suarl_id',
+        'sa_id',
+    ];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

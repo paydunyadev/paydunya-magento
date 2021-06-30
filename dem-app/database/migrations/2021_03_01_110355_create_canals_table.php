@@ -15,10 +15,8 @@ class CreateCanalsTable extends Migration
     {
         Schema::create('canals', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->decimal('price');
-            $table->longText('description');
             $table->foreignId('move_id')->constrained('moves')->onDelete('cascade');
+            $table->foreignId('type_canal_id')->constrained('type_canals')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -9,6 +9,29 @@ class CivilStatus extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'firstName',
+        'lastName',
+        'passportNumber',
+        'dateOfBirth',
+        'dateOfDeleverancePassport',
+        'placeOfBirth',
+        'numberCni',
+        'profession',
+        'nationality',
+        'physicalAddress',
+        'tel',
+        'email',
+        'marital_regime_id',
+        'marital_statuse_id',
+        'entreprise_id',
+        'scanIdentityPiece',
+        'scanCertificatWendding',
+    ];
+
+
+    protected $dates = ['dateOfBirth','dateOfDeleverancePassport'];
+
     /**
      * @var string
      */
@@ -19,6 +42,13 @@ class CivilStatus extends Model
      */
     public function maritalStatus(){
         return $this->belongsTo(MaritalStatus::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function entreprise(){
+        return $this->belongsTo(Entreprise::class);
     }
 
     /**

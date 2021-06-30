@@ -16,7 +16,7 @@
             </div>
         </div>
 <!--
->>>>>>> 427b5b290e2b931a138fb218166ee64cd1a77552
+
         <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-2">
             <div class="p-6">
                 <div class="flex items-center">
@@ -89,19 +89,18 @@
                     </div>
                 </div>
             </div>
-<<<<<<< HEAD
-        </div>
-=======
+
         </div> -->
-    </div>
+  </div>
 </template>
 
 <script>
-    import JetApplicationLogo from '@/Jetstream/ApplicationLogo'
-
-    export default {
-        components: {
-            JetApplicationLogo,
-        },
-    }
+import JetApplicationLogo from "@/Jetstream/ApplicationLogo";
+import RapidAccess from "../Pages/Public/Rapid-access"
+export default {
+  components: {
+    JetApplicationLogo,
+    RapidAccess
+  },
+};
 </script>

@@ -9,6 +9,29 @@ class CounterElectricity extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'oldAddress',
+        'oldPolice',
+        'haveCompteBanque',
+        'banqueName',
+        'banqueCompteNumber',
+        'invoice',
+        'brighFirePlaceNumber',
+        'fridgeNumber',
+        'tvNumber',
+        'freezerNumber',
+        'waterHeaterNumber',
+        'fanNumber',
+        'airConditionerNumber',
+        'washingMachineNumber',
+        'compteNumber',
+        'moterAndVariousNumber',
+        'costomerSignature',
+        'move_id',
+        'type_local_id',
+        'type_conter_id',
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

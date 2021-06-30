@@ -31,5 +31,10 @@
         "vue": "^3.0.5",
         "vue-loader": "^16.1.2",
         "webpack-cli": "^4.5.0"
+    },
+    "dependencies": {
+        "@johmun/vue-tags-input": "^2.1.0",
+        "smart-tagz": "^0.2.0",
+        "vue-signature": "^2.5.1"
     }
 }

@@ -24,10 +24,13 @@ class CreateCivilStatusesTable extends Migration
             $table->string('numberCni');
             $table->string('profession');
             $table->string('nationality');
+            $table->string('scanIdentityPiece')->nullable();
+            $table->string('scanCertificatWendding')->nullable();
             $table->string('physicalAddress');
             $table->string('tel');
             $table->string('email');
             $table->foreignId('marital_regime_id')->constrained('marital_regimes')->onDelete('cascade');
+            $table->foreignId('entreprise_id')->constrained('entreprises')->onDelete('cascade');
             $table->foreignId('marital_statuse_id')->constrained('marital_statuses')->onDelete('cascade');
             $table->timestamps();
         });
