@@ -1,0 +1,29 @@
+{
+  "gatewayApp": {
+    "demandeDemande": {
+      "home": {
+        "title": "Demandes",
+        "createLabel": "Créer un nouveau Demande",
+        "createOrEditLabel": "Créer ou éditer un Demande"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Demande {{ id }} ?"
+      },
+      "detail": {
+        "title": "Demande"
+      },
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "imagePiece": "Image Piece",
+      "user": "User",
+      "type": "Type"
+    }
+  },
+  "demandeApp": {
+    "demandeDemande": {
+      "created": "Un nouveau Demande a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Demande avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Demande avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

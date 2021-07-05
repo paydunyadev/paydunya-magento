@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="question">
+            <h2><span>Question</span> {{ question.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span>Libelle</span></dt>
+                <dd>
+                    <span>{{ question.libelle }}</span>
+                </dd>
+                <dt><span>Date</span></dt>
+                <dd>
+                    <span>{{ question.date }}</span>
+                </dd>
+                <dt><span>Cloturer</span></dt>
+                <dd>
+                    <span>{{ question.cloturer }}</span>
+                </dd>
+                <dt><span>Techno</span></dt>
+                <dd>
+                    <div *ngIf="question.techno">
+                        <a [routerLink]="['/techno', question.techno?.id, 'view']">{{ question.techno?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span>Langage</span></dt>
+                <dd>
+                    <div *ngIf="question.langage">
+                        <a [routerLink]="['/langage', question.langage?.id, 'view']">{{ question.langage?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/question', question.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

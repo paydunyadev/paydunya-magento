@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-question-heading">Create or edit a Question</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="input-group">
+                        <input id="field_date" type="text" class="form-control" name="date" ngbDatepicker #dateDp="ngbDatepicker" formControlName="date"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_cloturer">Cloturer</label>
+                    <input type="checkbox" class="form-control" name="cloturer" id="field_cloturer"
+                           formControlName="cloturer"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_techno">Techno</label>
+                    <select class="form-control" id="field_techno" name="techno" formControlName="techno">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="technoOption.id === editForm.get('techno')!.value?.id ? editForm.get('techno')!.value : technoOption" *ngFor="let technoOption of technos; trackBy: trackById">{{ technoOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_langage">Langage</label>
+                    <select class="form-control" id="field_langage" name="langage" formControlName="langage">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="langageOption.id === editForm.get('langage')!.value?.id ? editForm.get('langage')!.value : langageOption" *ngFor="let langageOption of langages; trackBy: trackById">{{ langageOption.id }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

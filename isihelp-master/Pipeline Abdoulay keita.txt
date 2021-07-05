@@ -1,0 +1,60 @@
+pipeline {
+    agent any
+
+    stages {
+        
+        stage('Build') {
+            steps {
+                git(
+                    url:'ghttps://gitlab.com/project_devops/isihelp.git',
+                    credentialsId:'KabaGitLab',
+                    branch:'master'
+                    )
+            }
+        }
+        
+         stage('Clean') {
+            steps {
+                bat 'mvn clean'
+            }
+        }
+        
+         stage('Unit test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+        
+        stage('Quality code') {
+            steps {
+                bat 'mvn sonar:sonar'
+            }
+        }
+        
+        stage('Local deploy') {
+            steps {
+                bat 'mvn install -DskipTests=true'
+            }
+        }
+       stage('') {
+            steps {
+                nexusArtifactoryUploader artifact :[
+			[
+			artifactId:'isi-help',
+			classifier:'',
+			file:'target/isi-help-0.0.1-SNPSHOT.war',
+			type:'war'
+			]
+                ],
+		credentialsId:'keita',
+		groupId:'com.groupeisi.isihelp',
+		NexusUrl:'http://localhost:8085',
+		NexusVersion:'Nexus2',
+		protocol:'http',
+		repository:'https://gitlab.com/project_devops/isihelp.git',
+		version:'0.0.1-SNAPSHOP'
+            }
+        }
+        
+    }
+}

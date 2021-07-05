@@ -1,0 +1,9 @@
+
+    \  |  ___ \     ___|   |           ___|     _ \       \       _ \
+   |\/ |     ) |   |       |         \___ \    |   |     _ \     |   |
+   |   |    __/    |   |   |               |   |   |    ___ \    ___/
+  _|  _|  _____|  \____|  _____|     _____/   \___/   _/    _\  _|
+
+
+${AnsiColor.BRIGHT_BLUE}:: JHipster 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: https://www.jhipster.tech ::${AnsiColor.DEFAULT}

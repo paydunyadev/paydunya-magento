@@ -1,0 +1,11 @@
+version: '2'
+services:
+  demande-postgresql:
+    image: postgres:11.2
+    # volumes:
+    #     - ~/volumes/jhipster/demande/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=demande
+      - POSTGRES_PASSWORD=
+    ports:
+      - 5432:5432

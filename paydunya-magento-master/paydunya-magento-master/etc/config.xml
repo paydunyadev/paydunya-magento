@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <paydunya>
+                <active>1</active>
+                <title>Visa/MasterCard, Orange Money, Wari, Joni Joni</title>
+                <description>Paiement sécurisé via PayDunya</description>
+                <sandbox>1</sandbox>
+                <order_status>pending_payment</order_status>
+				<payment_action>true</payment_action>
+                <model>Paydunya\PaydunyaMagento\Model\Paydunya</model>
+                <group>offline</group>
+            </paydunya>
+        </payment>
+    </default>
+</config>
